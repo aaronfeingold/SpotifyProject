@@ -10,7 +10,5 @@ authenticator = Authenticator(client_id=secrets["CLIENT_ID"], client_secret=secr
 song_getter = SongGetter(sp=authenticator.sp)
 songs = [song_getter.get_song(name) for name in user_names]
 text_sender = SendTextMessage(songs=songs)
-full_message = text_sender.send_sms()
+text_sender.send_sms()
 
-
-print(full_message)

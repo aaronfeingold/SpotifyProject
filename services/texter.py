@@ -29,20 +29,18 @@ class SendTextMessage:
 
   
   def send_sms(self):
-    return self.message
+    joined_sentances = ', '.join(self.message)
+    final_message = client.messages \
+                .create(
+                    body=joined_sentances,
+                    from_='+13478307901',
+                    to='+12017879112'
+                )
+    return final_message
 
 
 
-
-# message = client.messages \
-#             .create(
-#                  body=self.message,
-#                  from_='+13478307901',
-#                  to='+12017879112'
-#              )
-# print(message.sid)
 # text_sender = SendTextMessage(songs=dev_songs)
-
-# print(text_sender.message)
+# text_sender.send_sms()
 
 
