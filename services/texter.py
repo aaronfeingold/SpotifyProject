@@ -1,10 +1,10 @@
-from decouple import config
 from twilio.rest import Client
 
 class SendTextMessage:
-  def __init__(self, songs, numbers, account_sid, auth_token):
+  def __init__(self, app_number, songs, numbers, account_sid, auth_token):
     self.songs = songs
     self.numbers = numbers
+    self.app_number = app_number
     self.client = Client(username=account_sid, password=auth_token)
     self.message = self.set_message()
 
@@ -23,7 +23,6 @@ class SendTextMessage:
 
     return message
 
-
   def send_sms(self):
     joined_sentances = "\n\n".join(self.message)
 
@@ -31,7 +30,8 @@ class SendTextMessage:
       final_message = self.client.messages \
                   .create(
                       body=joined_sentances,
-                      from_='+13478307901',
+                      from_=self.app_number,
                       to=number
                   )
+                
 
