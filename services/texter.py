@@ -29,7 +29,7 @@ class SendTextMessage:
 
   
   def send_sms(self):
-    joined_sentances = ', '.join(self.message)
+    joined_sentances = "\n\n".join(self.message)
     final_message = client.messages \
                 .create(
                     body=joined_sentances,
