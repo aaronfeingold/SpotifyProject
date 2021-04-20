@@ -5,8 +5,6 @@ account_sid = config('TWILIO_ACCOUNT_SID')
 auth_token = config('TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
-# dev_songs = [{'track_href': 'https://open.spotify.com/track/6gfb1SpowOErvfNBkFZT45', 'track_artist': 'Ghost', 'track_name': 'Con Clavi Con Dio'}, {'track_href': 'https://open.spotify.com/track/3qNb7IfeHSWVIyAeYkZXAa', 'track_artist': 'Khamari', 'track_name': 'The Heat'}, {'track_href': 'https://open.spotify.com/track/5VKEsChbUowEF2BT0gJSGX', 'track_artist': 'Gunship', 'track_name': 'Tech Noir'}]
-
 class SendTextMessage:
   def __init__(self, songs):
     self.songs = songs
@@ -39,7 +37,7 @@ class SendTextMessage:
     return final_message
 
 
-
+# dev_songs = [{'track_href': 'https://open.spotify.com/track/6gfb1SpowOErvfNBkFZT45', 'track_artist': 'Ghost', 'track_name': 'Con Clavi Con Dio'}, {'track_href': 'https://open.spotify.com/track/3qNb7IfeHSWVIyAeYkZXAa', 'track_artist': 'Khamari', 'track_name': 'The Heat'}, {'track_href': 'https://open.spotify.com/track/5VKEsChbUowEF2BT0gJSGX', 'track_artist': 'Gunship', 'track_name': 'Tech Noir'}]
 # text_sender = SendTextMessage(songs=dev_songs)
 # text_sender.send_sms()
 
