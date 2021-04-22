@@ -1,19 +1,33 @@
 from services.authentication import SpotifyAuthenticator
 from services.song_getter import SongGetter
 from services.texter import SendTextMessage
+from dotenv import load_dotenv
 import json
+import os
 
-secrets = json.loads(open("secrets.json").read())
+class Main:
 
-with open('data.json') as json_file:
-  data = json.load(json_file)
-  dev_user_names = data["dev_user_names"]
-  dev_numbers = data["dev_numbers"]
-  app_number = data["app_number"]
+  def __init__(self):
+    self.environment = self.load_environment()
+    self.data = self.get_data()
+
+  def load_environment(self):
+    load_dotenv()
+    self.spotify_client_id = os.environ["SPOTIFY_CLIENT_ID"]
+    self.spotify_client_secret = os.environ["SPOTIFY_CLIENT_SECRET"]
+    self.twilio_acct_sid = os.environ["TWILIO_ACCT_SID"]
+    self.twilio_auth_token = os.environ["TWILIO_AUTH_TOKEN"]
 
 
-sa = SpotifyAuthenticator(client_id=secrets["SPOTIFY_CLIENT_ID"], client_secret=secrets["SPOTIFY_CLIENT_SECRET"])
-song_getter = SongGetter(sp=sa.sp)
-songs = [song_getter.get_song(name) for name in dev_user_names]
-text_sender = SendTextMessage(songs=songs, app_number=app_number, numbers=dev_numbers, account_sid=secrets["TWILIO_ACCT_SID"], auth_token=secrets["TWILIO_AUTH_TOKEN"])
-text_sender.send_sms()
+  def get_data(self):
+    with open('data.json') as json_file:
+      data = json.load(json_file)
+    return data
+
+
+  def run_main(self):
+    sa = SpotifyAuthenticator(client_id=self.spotify_client_id, client_secret=self.spotify_client_secret)
+    song_getter = SongGetter(sp=sa.sp)
+    songs = [song_getter.get_song(name) for name in self.data["dev_user_names"]]
+    text_sender = SendTextMessage(songs=songs, app_number=self.data["app_number"], numbers=self.data["dev_numbers"], account_sid=self.twilio_acct_sid, auth_token=self.twilio_auth_token)
+    text_sender.send_sms()

@@ -25,7 +25,7 @@ class SendTextMessage:
 
   def send_sms(self):
     joined_sentances = "\n\n".join(self.message)
-
+  
     for number in self.numbers:
       final_message = self.client.messages \
                   .create(
