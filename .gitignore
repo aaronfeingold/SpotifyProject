@@ -7,3 +7,4 @@ __pycache__
 services/__pycache__
 my-deployment-package.zip
 cache.txt
+Pipfile.lock
