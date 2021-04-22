@@ -3,3 +3,5 @@
 secrets.json
 data.json
 .env
+__pycache__
+services/__pycache__
