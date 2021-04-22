@@ -7,7 +7,8 @@ import os
 
 class Main:
 
-  def __init__(self):
+  def __init__(self, cache_path):
+    self.cache_path = cache_path
     self.environment = self.load_environment()
     self.data = self.get_data()
 
@@ -26,7 +27,7 @@ class Main:
 
 
   def run_main(self):
-    sa = SpotifyAuthenticator(client_id=self.spotify_client_id, client_secret=self.spotify_client_secret)
+    sa = SpotifyAuthenticator(client_id=self.spotify_client_id, client_secret=self.spotify_client_secret, cache_path=self.cache_path)
     song_getter = SongGetter(sp=sa.sp)
     songs = [song_getter.get_song(name) for name in self.data["dev_user_names"]]
     text_sender = SendTextMessage(songs=songs, app_number=self.data["app_number"], numbers=self.data["dev_numbers"], account_sid=self.twilio_acct_sid, auth_token=self.twilio_auth_token)
