@@ -18,9 +18,9 @@ If you made it this far, thanks for taking an interest in this repository. In it
 
   ["username1", "username2, "username3"]
 
-    * b. Add the phone number you used to make your Twilio account in to the corresponding array for "dev_numbers". You can add more verified numbers manually. 
+   * b. Add the phone number you used to make your Twilio account in to the corresponding array for "dev_numbers". You can add more verified numbers manually. 
   
-    * c. Add the app phone number that you selected when making a Twilio account and app.
+   * c. Add the app phone number that you selected when making a Twilio account and app.
 
 3. Third, change the file name of *test.json* to *data.json*.
 
