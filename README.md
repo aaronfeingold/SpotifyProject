@@ -26,5 +26,5 @@ If you made it this far, thanks for taking an interest in this repository. In it
 
 If the data is correctly insterted (look into more info on json if you must), and package dependancies are now available on you local environment, in your terminal, run python test.py
 
-If it runs correctly, your console should print some songs, and your phone should receive them as well. If it doesn't, follow the yellow brick road.
+When it runs, your console should print some songs, and your phone should receive them as well.
 
