@@ -29,6 +29,7 @@ def run_main():
   text_sender.send_sms(app_number=data["app_number"], numbers=data["dev_numbers"], message=message)
 
 
+
 def test():
   with open('data.json') as json_file:
     data = json.load(json_file)
