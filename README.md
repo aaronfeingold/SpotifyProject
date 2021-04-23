@@ -22,9 +22,13 @@ If you made it this far, thanks for taking an interest in this repository. In it
 
 3. Third, change the file name of *test.json* to *data.json*.
 
-4. Fourth, make sure you've downloaded the package dependancies. Spotipy has been integrated for streamlining API calls, and the CacheHandler will store your API token in a hidden file, while the feature for client credentials handles the base64 encoding.
+4. Fourth, in your terminal, run: 
+    > $ pipenv install 
 
-If the data is correctly insterted (look into more info on json if you must), and package dependancies are now available on you local environment, in your terminal, run python test.py
+Spotipy has been integrated for streamlining API calls, and the CacheHandler will store your API token in a hidden file, while the feature for client credentials handles the base64 encoding.
+
+If the data is correctly insterted, and package dependancies are now available on you local environment, in your terminal, run 
+  > $ python test.py
 
 When it runs, your console should print some songs, and your phone should receive them as well.
 
