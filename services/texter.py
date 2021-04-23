@@ -35,6 +35,8 @@ class SendTextMessage:
         
     if len(errors) != 0:
       return errors
+    else:
+      print("done, check phone")
 
 
 
