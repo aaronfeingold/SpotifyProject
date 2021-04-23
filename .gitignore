@@ -3,8 +3,9 @@
 secrets.json
 data.json
 .env
-__pycache__
-services/__pycache__
+/__pycache__
+/services/__pycache__
 my-deployment-package.zip
 cache.txt
 Pipfile.lock
+.DS_Store

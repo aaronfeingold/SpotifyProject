@@ -24,17 +24,17 @@ class SendTextMessage:
     return message
 
   def send_sms(self):
-    joined_sentances = "\n\n".join(self.message)
+    joined_sentences = "\n\n".join(self.message)
 
     for number in self.numbers:
       final_message = self.client.messages \
                   .create(
-                      body=joined_sentances,
+                      body=joined_sentences,
                       from_=self.app_number,
                       to=number
                   )
 
-    return joined_sentances
+    return joined_sentences
 
 
   
