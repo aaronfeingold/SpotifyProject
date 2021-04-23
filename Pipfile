@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 twilio = "*"
 spotipy = "*"
+requests = "*"
 
 [requires]
 python_version = "3.9"
+
