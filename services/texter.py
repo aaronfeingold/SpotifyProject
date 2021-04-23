@@ -34,7 +34,7 @@ class SendTextMessage:
         errors.append(final_message.error_message)
         
     if len(errors) != 0:
-      return errors
+      print(errors)
     else:
       print("done, check phone")
 
