@@ -24,7 +24,7 @@ def run_main():
   sa = SpotifyAuthenticator(client_id=spotify_client_id, client_secret=spotify_client_secret)
   song_getter = SongGetter(sp=sa.sp)
   songs = [song_getter.get_song(name) for name in data["dev_user_names"]]
-  text_sender = SendTextMessage(app_number=data["app_number"], account_sid=twilio_acct_sid, auth_token=twilio_auth_token)
+  text_sender = SendTextMessage(account_sid=twilio_acct_sid, auth_token=twilio_auth_token)
   message = text_sender.set_message(songs=songs)
   text_sender.send_sms(app_number=data["app_number"], numbers=data["dev_numbers"], message=message)
 
