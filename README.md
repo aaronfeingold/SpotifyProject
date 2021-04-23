@@ -18,8 +18,8 @@ If you made it this far, thanks for taking an interest in this repository. In it
       * To find your friends, log into your Spotify account, navigate to either followers or following--let's consider them "freinds"
       * next to "dev_user_names" (second line in file)
       * copy and paste as many of their usernames as you'd like into the json file with correct format
-      * use double quotes around the name, and comma separated with a space between each (string) *within* the square brackets (array)
-        > "dev_user_names": ["username1", "username2, "username3"]
+      * use double quotes around the name, and comma separated with a space between each (string) *within* the square brackets (array); line 2 should look like:
+        > "dev_user_names": ["username1", "username2, "username3"],
 
    * b. Add the phone number you used to make your Twilio account in to the corresponding array for "dev_numbers". You can add more verified numbers manually. 
   
