@@ -12,9 +12,6 @@ def run_main(event, context):
   scs = os.environ["SPOTIFY_CLIENT_SECRET"]
   tai = os.environ["TWILIO_ACCT_SID"]
   tat = os.environ["TWILIO_AUTH_TOKEN"]
-
-  with open('data.json') as json_file:
-    data = json.load(json_file)
   
   sa = SpotifyAuthenticator(client_id=sci, client_secret=scs)
   song_getter = SongGetter(sp=sa.sp)

@@ -10,3 +10,4 @@ cache.txt
 Pipfile.lock
 .DS_Store
 test.py
+/package
