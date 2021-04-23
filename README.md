@@ -23,10 +23,10 @@ If you made it this far, thanks for taking an interest in this repository. In it
 3. Third, change the file name of *test.json* to *data.json*.
 
 4. Fourth, in your terminal, run: 
-    > $ pipenv install
+    > $ pipenv install --dev
 
-5. If the data is correctly inserted, and package dependencies are now available on you local environment, in your terminal, run:
-    > $ python test.py
+5. If the data is correctly inserted, and package dependencies are now available on you local environment, in your terminal, run the test:
+    > $ python main.py
     > 
 
 6. Last, your console should print either done or errors; your phone should receive a text message with links to--potentially--good music.
