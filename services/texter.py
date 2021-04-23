@@ -22,7 +22,6 @@ class SendTextMessage:
 
 
   def send_sms(self, app_number, numbers, message):
-    sids = []
     errors = []
 
     for number in numbers:
@@ -34,13 +33,11 @@ class SendTextMessage:
                   )
       if final_message.error_code:
         errors.append(final_message.error_message)
-      else:
-        sids.append(final_message.sid)
 
     if len(errors) != 0:
       return errors
     else:
-      return sids
+      print("send text completed, check phone")
 
 
   
