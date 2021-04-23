@@ -32,7 +32,8 @@ class Main:
     songs = [song_getter.get_song(name) for name in self.data["dev_user_names"]]
     text_sender = SendTextMessage(app_number=self.data["app_number"], account_sid=self.twilio_acct_sid, auth_token=self.twilio_auth_token)
     message = text_sender.set_message(songs=songs)
-    text_sender.send_sms(app_number=self.data["app_number"], numbers=self.data["dev_numbers"], message=message)
+    response = text_sender.send_sms(app_number=self.data["app_number"], numbers=self.data["dev_numbers"], message=message)
 
+    return response
 
     
