@@ -9,3 +9,4 @@ my-deployment-package.zip
 cache.txt
 Pipfile.lock
 .DS_Store
+test.py
