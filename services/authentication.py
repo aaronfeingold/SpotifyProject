@@ -1,6 +1,5 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-from spotipy import CacheFileHandler
 
 class SpotifyAuthenticator:
   def __init__(self, client_id, client_secret):
