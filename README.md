@@ -2,15 +2,15 @@
 
 ## Call Spotify API and send yourself a text message (SMS) containing the most recent song added to playlists by your friends. 
 
-### Forthcoming frontend project(React.js) will allow you to add your phone number to receive weekly text of "top" songs from other users. This front-end will create new AWS Cloudwatch triggers with specific instructions and payloads to run app as serverless Lambda function. 
+### Forthcoming frontend project(React.js) will allow you to add your phone number to receive weekly text of "top" songs from other users. It will create new AWS Cloudwatch triggers with specific instructions and payloads to run app as Lambda function. 
 
-### Personal version hosted now on AWS. Beginning the process of scaling will be fun.
+### Personal version hosted now on AWS.
 
-#### TO USE THIS AS OF NOW:
+#### TO USE:
 
 If you made it this far, thanks for taking an interest in this repository. In its current form, this app needs a little upfront work from the user:
 
-1. First, you'll need to create developer's accounts and apps on both **Spotify** and **Twilio**. With your access credentials, load them as variables into your local environment in accordance with the outline found in the main.load_environment(); or into a .env file that you can create in the project's main directory(dotenv will do the work there if necessary).
+1. First, you'll need to create developer's accounts and apps on both **Spotify** and **Twilio**. With your access credentials, load them as variables into your local environment; or into a .env file that you can create in the project's main directory(dotenv will do the work there if necessary).
 
 2. Second, test.json needs to be filled out with some info. 
 
