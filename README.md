@@ -29,5 +29,4 @@ If you made it this far, thanks for taking an interest in this repository. In it
     > $ python test.py
     > 
 
-6. Last, your console should print some songs, and your phone should receive them as well.
-
+6. Last, your console should print either done or errors; your phone should receive a text message with links to--potentially--good music.
