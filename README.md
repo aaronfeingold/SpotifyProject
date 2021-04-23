@@ -14,7 +14,12 @@ If you made it this far, thanks for taking an interest in this repository. In it
 
 2. Second, test.json needs to be filled out with some info. 
 
-   * a. Add the usernames of your Spotify friends to be queried. To find your friends (or followers, or following), log into your personal account and copy and           paste their names into the file with double quotes around the name, and comma separate within the square brackets (the array) next to "dev_user_names"           (second line in file) like this: ["username1", "username2, "username3"]
+   * a. Add the usernames of your Spotify friends to be queried:
+      * To find your friends, log into your Spotify account, navigate to either followers or following--let's consider them "freinds"
+      * next to "dev_user_names" (second line in file)
+      * copy and paste as many of their usernames as you'd like into the json file with correct format
+      * use double quotes around the name, and comma separated with a space between each (string) *within* the square brackets (array)
+      * ["username1", "username2, "username3"]
 
    * b. Add the phone number you used to make your Twilio account in to the corresponding array for "dev_numbers". You can add more verified numbers manually. 
   
