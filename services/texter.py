@@ -1,8 +1,7 @@
 from twilio.rest import Client
 
 class SendTextMessage:
-  def __init__(self, app_number, account_sid, auth_token):
-    self.app_number = app_number
+  def __init__(self, account_sid, auth_token):
     self.client = Client(username=account_sid, password=auth_token)
 
 
