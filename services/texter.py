@@ -1,40 +1,35 @@
 from twilio.rest import Client
 
 class SendTextMessage:
-  def __init__(self, app_number, songs, numbers, account_sid, auth_token):
-    self.songs = songs
-    self.numbers = numbers
+  def __init__(self, app_number, account_sid, auth_token):
     self.app_number = app_number
     self.client = Client(username=account_sid, password=auth_token)
-    self.message = self.set_message()
 
 
-  def set_message(self):
-    songs = self.songs
-    
+  def set_message(self, songs):
     message = []
 
     for song in songs:
       artist = song["track_artist"]
       track = song["track_name"]
       song_link = song["track_href"]
-      sentance = f'{track} by: {artist}. Link here: {song_link}'
-      message.append(sentance)
+      sentence = f'{track} by: {artist}. Link here: {song_link}'
+      message.append(sentence)
 
-    return message
+    formatted_message = "\n\n".join(message)
 
-  def send_sms(self):
-    joined_sentences = "\n\n".join(self.message)
+    return formatted_message
 
-    for number in self.numbers:
+
+  def send_sms(self, app_number, numbers, message):
+
+    for number in numbers:
       final_message = self.client.messages \
                   .create(
-                      body=joined_sentences,
-                      from_=self.app_number,
+                      body=message,
+                      from_=app_number,
                       to=number
                   )
-
-    return joined_sentences
 
 
   
