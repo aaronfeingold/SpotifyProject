@@ -31,11 +31,7 @@ def run_main():
 
 
 def test():
-  with open('data.json') as json_file:
-    data = json.load(json_file)
-    trigger = data["dev_cloudwatch_trigger"]
-
-  lambda_handler(event=trigger, context=None)
+  lambda_handler(event=data["dev_cloudwatch_trigger"], context=None)
 
 
 test()
