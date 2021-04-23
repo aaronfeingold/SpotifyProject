@@ -23,11 +23,13 @@ If you made it this far, thanks for taking an interest in this repository. In it
 3. Third, change the file name of *test.json* to *data.json*.
 
 4. Fourth, in your terminal, run: 
-    > $ pipenv install 
+    > $ pipenv install
+    >  
 
 
-If the data is correctly insterted, and package dependancies are now available on you local environment, in your terminal, run:
+If the data is correctly inserted, and package dependencies are now available on you local environment, in your terminal, run:
     > $ python test.py
+    > 
 
 Last, your console should print some songs, and your phone should receive them as well.
 
