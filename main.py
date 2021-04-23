@@ -5,34 +5,37 @@ from dotenv import load_dotenv
 import json
 import os
 
-class Main:
+load_dotenv()
 
-  def __init__(self, cache_path):
-    self.cache_path = cache_path
-    self.environment = self.load_environment()
-    self.data = self.get_data()
+spotify_client_id = os.environ["SPOTIFY_CLIENT_ID"]
+spotify_client_secret = os.environ["SPOTIFY_CLIENT_SECRET"]
+twilio_acct_sid = os.environ["TWILIO_ACCT_SID"]
+twilio_auth_token = os.environ["TWILIO_AUTH_TOKEN"]
 
-  def load_environment(self):
-    load_dotenv()
-    self.spotify_client_id = os.environ["SPOTIFY_CLIENT_ID"]
-    self.spotify_client_secret = os.environ["SPOTIFY_CLIENT_SECRET"]
-    self.twilio_acct_sid = os.environ["TWILIO_ACCT_SID"]
-    self.twilio_auth_token = os.environ["TWILIO_AUTH_TOKEN"]
+with open('data.json') as json_file:
+  data = json.load(json_file)
 
 
-  def get_data(self):
-    with open('data.json') as json_file:
-      data = json.load(json_file)
-    return data
+def lambda_handler(event, context):
+    run_main()
 
 
-  def run_main(self):
-    sa = SpotifyAuthenticator(client_id=self.spotify_client_id, client_secret=self.spotify_client_secret, cache_path=self.cache_path)
-    song_getter = SongGetter(sp=sa.sp)
-    songs = [song_getter.get_song(name) for name in self.data["dev_user_names"]]
-    text_sender = SendTextMessage(app_number=self.data["app_number"], account_sid=self.twilio_acct_sid, auth_token=self.twilio_auth_token)
-    message = text_sender.set_message(songs=songs)
-    sids = text_sender.send_sms(app_number=self.data["app_number"], numbers=self.data["dev_numbers"], message=message)
-    return sids
+def run_main():
+  sa = SpotifyAuthenticator(client_id=spotify_client_id, client_secret=spotify_client_secret)
+  song_getter = SongGetter(sp=sa.sp)
+  songs = [song_getter.get_song(name) for name in data["dev_user_names"]]
+  text_sender = SendTextMessage(app_number=data["app_number"], account_sid=twilio_acct_sid, auth_token=twilio_auth_token)
+  message = text_sender.set_message(songs=songs)
+  text_sender.send_sms(app_number=data["app_number"], numbers=data["dev_numbers"], message=message)
 
-    
+
+
+def test():
+  with open('data.json') as json_file:
+    data = json.load(json_file)
+    trigger = data["dev_cloudwatch_trigger"]
+
+  lambda_handler(event=trigger, context=None)
+
+
+test()
