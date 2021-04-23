@@ -24,12 +24,10 @@ If you made it this far, thanks for taking an interest in this repository. In it
 
 4. Fourth, in your terminal, run: 
     > $ pipenv install
-    >  
 
-
-If the data is correctly inserted, and package dependencies are now available on you local environment, in your terminal, run:
+5. If the data is correctly inserted, and package dependencies are now available on you local environment, in your terminal, run:
     > $ python test.py
     > 
 
-Last, your console should print some songs, and your phone should receive them as well.
+6. Last, your console should print some songs, and your phone should receive them as well.
 
