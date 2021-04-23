@@ -1,5 +1,5 @@
 {
-  "dev_user_names": ["{add your Spotify User name, and your friend's here}"],
+  "dev_user_names": ["{remove and your Spotify User name here", "{and your friends' here}", "{make sure to remove the brackets in the quotes, too}", "exampleUserName"],
   "dev_numbers": ["+1{your_number_here}"],
   "app_number": ["+1{app_number_here}"],
   "dev_cloudwatch_trigger": {

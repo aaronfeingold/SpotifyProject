@@ -1,8 +1,7 @@
 from twilio.rest import Client
 
 class SendTextMessage:
-  def __init__(self, app_number, account_sid, auth_token):
-    self.app_number = app_number
+  def __init__(self, account_sid, auth_token):
     self.client = Client(username=account_sid, password=auth_token)
 
 
@@ -23,7 +22,7 @@ class SendTextMessage:
 
   def send_sms(self, app_number, numbers, message):
     errors = []
-
+    
     for number in numbers:
       final_message = self.client.messages \
                   .create(
@@ -33,11 +32,12 @@ class SendTextMessage:
                   )
       if final_message.error_code:
         errors.append(final_message.error_message)
-
+        
     if len(errors) != 0:
-      return errors
+      print(errors)
     else:
-      print("send text completed, check phone")
+      print("done, check phone")
+
 
 
   
