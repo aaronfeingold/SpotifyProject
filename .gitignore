@@ -5,6 +5,7 @@ data.json
 .env
 /__pycache__
 /services/__pycache__
+/services/twilio_client.py
 my-deployment-package.zip
 cache.txt
 Pipfile.lock
