@@ -2,7 +2,7 @@ from twilio.rest import Client
 
 class TextFormatter():
 
-  def format_message(songs):
+  def format_message(self, songs):
     message = []
 
     for song in songs:

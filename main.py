@@ -4,6 +4,7 @@ from services.text_formatter import TextFormatter
 from dotenv import load_dotenv
 import json
 import os
+import ipdb
 
 def run_main(event):
   load_dotenv()
@@ -18,7 +19,7 @@ def run_main(event):
   token = tg.auth_token
   song_getter = SongGetter(token=token)
   songs = [song_getter.get_song(name) for name in data["dev_user_names"]]
-  message = TextFormatter().format_message(songs=songs)
+  message = TextFormatter().format_message(songs)
 
   return message
 
