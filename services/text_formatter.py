@@ -1,5 +1,3 @@
-from twilio.rest import Client
-
 class TextFormatter():
 
   def format_message(self, songs):

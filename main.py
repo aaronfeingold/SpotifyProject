@@ -1,13 +1,10 @@
 from services.token_getter import TokenGetter
 from services.song_getter import SongGetter
 from services.text_formatter import TextFormatter
-from dotenv import load_dotenv
 import json
 import os
-import ipdb
 
-def run_main(event):
-  load_dotenv()
+def run_main(event, conext):
 
   sci = os.environ["SPOTIFY_CLIENT_ID"]
   scs = os.environ["SPOTIFY_CLIENT_SECRET"]
@@ -22,7 +19,3 @@ def run_main(event):
   message = TextFormatter().format_message(songs)
 
   return message
-
-
-event = "test"
-print(run_main(event))

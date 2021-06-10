@@ -3,6 +3,7 @@
 secrets.json
 data.json
 .env
+/packages
 /__pycache__
 /services/__pycache__
 /services/twilio_client.py
@@ -11,3 +12,4 @@ cache.txt
 Pipfile.lock
 .DS_Store
 test.py
+output.txt
