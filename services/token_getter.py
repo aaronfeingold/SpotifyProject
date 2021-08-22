@@ -26,6 +26,8 @@ class TokenGetter():
 
     token = r.json()['access_token']
 
+    print(token)
+
     return token
 
 
