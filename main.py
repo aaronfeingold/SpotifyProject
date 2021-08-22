@@ -1,10 +1,12 @@
 from services.token_getter import TokenGetter
 from services.song_getter import SongGetter
 from services.text_formatter import TextFormatter
+from dotenv import load_dotenv
 import json
 import os
 
 def run_main(event, conext):
+  load_dotenv()
 
   sci = os.environ["SPOTIFY_CLIENT_ID"]
   scs = os.environ["SPOTIFY_CLIENT_SECRET"]
@@ -19,3 +21,11 @@ def run_main(event, conext):
   message = TextFormatter().format_message(songs)
 
   return message
+
+
+event1 = "hello"
+context1 = "eatMyShorts"
+
+message = run_main(event1, context1)
+
+print(message)
